@@ -5,12 +5,10 @@ import { urlNames, layoutNames } from "@/utils/constants";
 
 Vue.use(VueRouter);
 
-const Error404Page = () => import("@/views/Error404Page/index.vue");
-const MainPage = () => import("@/views/MainPage/index.vue");
-const MainPageHistory = () =>
-  import("@/views/MainPage/MainPageHistory/index.vue");
-const MainPageOverview = () =>
-  import("@/views/MainPage/MainPageOverview/index.vue");
+const Error404Page = () => import("@/views/Error404Page");
+const MainPage = () => import("@/views/MainPage");
+const MainPageHistory = () => import("@/views/MainPage/MainPageHistory");
+const MainPageOverview = () => import("@/views/MainPage/MainPageOverview");
 
 const routes = [
   {
