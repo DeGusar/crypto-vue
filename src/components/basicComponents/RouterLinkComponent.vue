@@ -6,11 +6,10 @@
 
 <script>
 function validatePropToData(propData) {
-  return (
-    (propData instanceof Object &&
-      Object.prototype.hasOwnProperty.call(propData, "name")) ||
-    propData instanceof String
-  );
+  if (propData instanceof Object) {
+    return Object.prototype.hasOwnProperty.call(propData, "name");
+  }
+  return propData instanceof String;
 }
 
 export default {
