@@ -1,13 +1,12 @@
 <template>
   <div class="error-layout">
-    <slot />
+     <router-view />
   </div>
 </template>
 
 <script>
 export default {
   name: 'ErrorLayout'
-
 }
 </script>
 

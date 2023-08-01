@@ -1,6 +1,6 @@
 export default {
-  MAIN_PAGE: "mainPage",
-  OVERVIEW: "overview",
-  HISTORY: "history",
-  ERROR_404_PAGE: "error404Page",
+  MAIN_PAGE: "MAIN_PAGE",
+  OVERVIEW: "OVERVIEW",
+  HISTORY: "HISTORY",
+  ERROR_404_PAGE: "ERROR_404_PAGE",
 };

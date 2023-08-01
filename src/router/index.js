@@ -1,40 +1,58 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import MainPage from "@/views/MainPage/index.vue";
-import MainPageHistory from "@/views/MainPage/MainPageHistory/index.vue";
-import MainPageOverview from "@/views/MainPage/MainPageOverview/index.vue";
+import { MainLayout, ErrorLayout } from "@/layouts";
 import { urlNames, layoutNames } from "@/utils/constants";
 
 Vue.use(VueRouter);
 
+const Error404Page = () => import("@/views/Error404Page/index.vue");
+const MainPage = () => import("@/views/MainPage/index.vue");
+const MainPageHistory = () =>
+  import("@/views/MainPage/MainPageHistory/index.vue");
+const MainPageOverview = () =>
+  import("@/views/MainPage/MainPageOverview/index.vue");
+
 const routes = [
   {
     path: "/",
-    name: urlNames.MAIN_PAGE,
-    component: MainPage,
-    meta: {
-      layout: layoutNames.MAIN_LAYOUT,
-    },
+    name: layoutNames.MAIN_LAYOUT,
+    component: MainLayout,
+    redirect: { name: urlNames.MAIN_PAGE },
     children: [
       {
-        path: "overview/:id",
-        name: urlNames.OVERVIEW,
-        component: MainPageOverview,
+        path: "main",
+        name: urlNames.MAIN_PAGE,
+        component: MainPage,
+        children: [
+          {
+            path: "overview/:id",
+            name: urlNames.OVERVIEW,
+            component: MainPageOverview,
+          },
+          {
+            path: "history/:id",
+            name: urlNames.HISTORY,
+            component: MainPageHistory,
+          },
+        ],
       },
+    ],
+  },
+  {
+    path: "/error",
+    component: ErrorLayout,
+    name: layoutNames.ERROR_LAYOUT,
+    children: [
       {
-        path: "history/:id",
-        name: urlNames.HISTORY,
-        component: MainPageHistory,
+        path: "404",
+        name: urlNames.ERROR_404_PAGE,
+        component: Error404Page,
       },
     ],
   },
   {
     path: "*",
-    name: urlNames.ERROR_404_PAGE,
-    component: () => import("@/views/Error404Page/index.vue"),
-    meta: {
-      layout: layoutNames.ERROR_LAYOUT,
-    },
+    redirect: { name: urlNames.ERROR_404_PAGE },
   },
 ];
 

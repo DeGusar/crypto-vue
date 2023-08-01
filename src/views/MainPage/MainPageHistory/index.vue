@@ -1,5 +1,5 @@
 <template>
-  <div>History</div>
+  <section>History</section>
 </template>
 
 <script>

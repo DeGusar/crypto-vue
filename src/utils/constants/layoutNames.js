@@ -1,4 +1,4 @@
 export default {
-  MAIN_LAYOUT: "MainLayout",
-  ERROR_LAYOUT: "ErrorLayout",
+  MAIN_LAYOUT: "MAIN_LAYOUT",
+  ERROR_LAYOUT: "ERROR_LAYOUT",
 };

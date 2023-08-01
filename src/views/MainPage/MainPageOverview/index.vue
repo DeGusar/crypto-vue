@@ -1,5 +1,5 @@
 <template>
-  <div>OverView</div>
+  <section>OverView</section>
 </template>
 
 <script>

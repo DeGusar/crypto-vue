@@ -12,7 +12,7 @@
     height: 30px;
     transform: translate(-50% -50%);
     border-radius: 50%;
-    // border-top: 2px solid $color-purple-dark;
+    border-top: 2px solid $color-purple-dark;
     border-right: 2px solid transparent;
     animation: spinner 1s linear infinite;
     visibility: visible;
@@ -20,5 +20,7 @@
 }
 
 @keyframes spinner {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
