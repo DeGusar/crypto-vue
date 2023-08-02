@@ -1,0 +1,6 @@
+export default {
+  MAIN_PAGE: "MAIN_PAGE",
+  OVERVIEW: "OVERVIEW",
+  HISTORY: "HISTORY",
+  ERROR_404_PAGE: "ERROR_404_PAGE",
+};

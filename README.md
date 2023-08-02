@@ -1,1 +1,1 @@
-# crypto-vue
+# Vue 2 + Vite
